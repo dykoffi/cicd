@@ -2,9 +2,22 @@ pipeline {
   agent any
   stages {
     stage('log') {
-      steps {
-        sh 'ls --all'
+      parallel {
+        stage('log') {
+          steps {
+            sh 'ls --all'
+          }
+        }
+
+        stage('Log2') {
+          steps {
+            fileExists 'index.js'
+            echo 'HEllo word'
+          }
+        }
+
       }
     }
+
   }
 }
