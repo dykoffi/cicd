@@ -25,5 +25,11 @@ pipeline {
       }
     }
 
+    stage('input') {
+      steps {
+        input(message: 'Input something', id: 'nom', ok: 'nom ok')
+      }
+    }
+
   }
 }
