@@ -16,12 +16,6 @@ pipeline {
           }
         }
 
-        stage('pm2 start') {
-          steps {
-            sh 'pm2 start index.js'
-          }
-        }
-
       }
     }
 
